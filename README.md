@@ -9,7 +9,7 @@ _"e621 offers a simple API to make scripting easy. All you need is a way to GET 
 This is a repository for a better set of documentation for the site [e621](https://e621.net). If you're here, you know what this site is for.
 </br>
 
-The official documentation is available [here](https://e621.net), but it does not go very in depth on GET/POST endpoints and how they differ. Also some information is incorrect. This documentation is derived from the official API documentation but presented in a different and more in-depth manor.
+The official documentation is available [here](https://e621.net/help/show/api), but it does not go very in depth on GET/POST endpoints and how they differ. Also some information is incorrect. This documentation is derived from the official API documentation but presented in a different and more in-depth manor.
 
 Any general information will be available on this page. if you want to get more information on any specific endpoint, look in the `docs/` folder of this repo.
 </br>
