@@ -56,6 +56,7 @@ would return a response like:
 mycallbackfunction([{"user":"A User","response":null,"body":"Blip one","user_id":1,"id":1}])
 ```
 </br>
+
 ### Using cURL
 
 If you are using cURL or something similar, you may experience failurs on your HTTP requests. The API declares this to be a problem with SSL. If this is the case, you will need to point cURL to a trusted certificate to compare the remote site's (e621.net) certificate with. You can get the certificate [here](http://curl.haxx.se/ca/cacert.pem). After you have the cert downloaded, you can point cURL to it like so:
@@ -71,7 +72,7 @@ Alternatively you can disable SSL alltogether (not advised)
 
 ## User-Agent Requirements
 
-Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise.
+Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise. (EX: `my-username/myproject-1.0`)
 
 **NOTE**: Impersonating a browser user-agent will quickly have your IP address blocked from API access by e621.
 </br>
@@ -128,9 +129,9 @@ e621 also uses standard HTTP responses as well as some custom responses, listed 
 
 ## Logging In
 
-Some API actions (Mostly POSTs) will require you to have an e621 account and log in through the API to complete actions as yourself.
+Some API actions (Mostly POSTs) will require you to have an e621 account and log in through the API to complete actions as yourself. 
 
-You must supply these parameters in your `form headers` even if you are sending a GET request. If you don't know what `form headers` are, check out [POSTing-to-e621](/docs/POSTing-to-e621.md) in the `docs/` folder.
+You must supply these parameters in your `form headers` even if you are sending a GET request. If you don't know what they are, check out [POSTing-to-e621](/docs/POSTing-to-e621.md) in the `docs/` folder.
 
 The required `form headers` parameters look like this for logging in:
 
@@ -146,13 +147,15 @@ The required `form headers` parameters look like this for logging in:
 
 The example here is for Node.js's `request` library but this should be pretty easy to implement in your favorite language.
 
+**Every time you are making a GET/POST call to the API you must supply your information within the `form header`.**
+
 **NOTE**: To enable API access, you must go to your account settings and generate an API key. After you have enabled API access **and generated an API key at least once**, you can use the below URL to get your `password_hash`.
 
 ```URL
 https://e621.net/user/login.json?name=USERNAME_HERE&password=PASSWORD_HERE
 ```
 
-If you do not have an API key generated, you will receive a failed login, even if the details are correct. Also, **be aware of the security risks involved in sending your API key through an unencrypted channel**. 
+If you do not have an API key generated, you will receive a failed login, even if the details are correct. Also, **be aware of the security risks involved in sending your API key through an unencrypted channel**. Typically it's better to generate the API-key on the site and store it in a file somewhere to be used in your project.
 </br>
 </br>
 
