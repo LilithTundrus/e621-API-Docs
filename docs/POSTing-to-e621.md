@@ -57,6 +57,8 @@ If you just want to log in through the API, your headers should look something l
 
 ## Notes
 
+- You must provide the login `form` parameters on **every** POST call you make to the API. There is no per-session login system
+
 - The e621 API does **NOT** use URL parameters when POSTing like it does for GET requests
 
 - You **must** provide a meaningful User-Agent to the API or your POST request will be denied
@@ -66,9 +68,8 @@ If you just want to log in through the API, your headers should look something l
 ```typescript
 postObject.login = "YOUR_E621_USER_NAME";
 postObject.password_hash = "YOUR_API_KEY";
+// any other parts of your postObj relating to the actual POST go here
 ```
-
-- This is typically not reuqired unless you are using this api-wrapper in a custom way, this is mostly so I don't forget how this API is finnicky with POSTing
 
 - When POSTing with information, any properties that look like this: `post[source]` are to be used in the POST object like so:
 
@@ -78,5 +79,6 @@ formOptions = {
     "post[source]": "source url where the image came from, can be blank but is required",
     "post[rating]": "rating string",
     "post[file]": "multipart form/file stream"
+    //... your login info would need to go here as well
 };
 ```
