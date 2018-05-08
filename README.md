@@ -39,3 +39,17 @@ After that, the `.json` part of the URL tells e621 that we want a JSON message r
 Lastly are your `parameters`. These change depending on the 'action' you are performing but the allow you to specify the type of data you are receiving from the API. In this case `limit=10` is our parameter. This limits the response from e621 to 10 posts being returned. 
 
 **Note**: Parameters for GET requests must **always** use a `?` to separate the URL from the parameters. Also, any additional parameters beyond the first must be separated with an `&`.
+</br>
+
+### JSONP Support
+
+The API does support JSONP. To use JSONP, append `&callback=mycallbackfunction` to your request. The resulting JSON will be encapsulated to a call to `mycallbackfunction`. 
+
+#### Example
+
+`/blip/index.json?callback=mycallbackfunction`
+
+would return a response like:
+```javascript
+mycallbackfunction([{"user":"A User","response":null,"body":"Blip one","user_id":1,"id":1}])
+```
