@@ -54,7 +54,6 @@ would return a response like:
 mycallbackfunction([{"user":"A User","response":null,"body":"Blip one","user_id":1,"id":1}])
 ```
 </br>
-
 ### Using cURL
 
 If you are using cURL or something similar, you may experience failurs on your HTTP requests. The API declares this to be a problem with SSL. If this is the case, you will need to point cURL to a trusted certificate to compare the remote site's (e621.net) certificate with. You can get the certificate [here](http://curl.haxx.se/ca/cacert.pem). After you have the cert downloaded, you can point cURL to it like so:
@@ -64,11 +63,45 @@ curl_setopt($ch, CURLOPT_CAINFO, "/server_dir/apache/cacert.pem");
 ```
 
 Alternatively you can disable SSL alltogether (not advised)
-
 </br>
+</br>
+
 
 ## User-Agent Requirements
 
 Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise.
 
 **NOTE**: Impersonating a browser user-agent will quickly have your IP address blocked from API access by e621.
+</br>
+</br>
+
+
+## Rate limiting
+
+e621 has a hard limit of 1 request per 500ms (2/sec). Breaking this limit will result in an HTTP 503 response.
+</br>
+</br>
+
+
+## Response Types
+
+The type of response you get from e621 depends on the type of endpoint you requested (XML or JSON).
+
+Any API calls that are modifying data (POST and some special GETs) will return a response like this:
+
+```js
+{success: false, reason: "duplicate"}
+```
+
+For XML the response looks like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<response success="false" reason="duplicate"/>
+```
+
+e621 also uses standard HTTP responses as well as some custom responses, listed below
+
+| Status Code | Description |
+|-------------|:-----------:|
+| test        |     yea        |
