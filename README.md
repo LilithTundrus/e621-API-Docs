@@ -100,7 +100,8 @@ For XML the response looks like this:
 <response success="false" reason="duplicate"/>
 ```
 
-e621 also uses standard HTTP responses as well as some custom responses, listed below
+e621 also uses standard HTTP responses as well as some custom responses, listed below.
+</br>
 
 | Status Code         | Description        |
 |---------------------|:------------------:|
@@ -119,4 +120,34 @@ e621 also uses standard HTTP responses as well as some custom responses, listed 
 | 522 Origin Connection Time-out	| CloudFlare's attempt to connect to the e621 servers timed out |
 | 524 Origin Connection Time-out	| A connection was established between CloudFlare and the e621 servers, but it timed out before an HTTP response was received |
 | 525 SSL Handshake Failed	| The SSL handshake between CloudFlare and the e621 servers failed |
+</br>
+</br>
 
+
+## Logging In
+
+Some API actions (Mostly POSTs) will require you to have an e621 account and log in through the API to complete actions as yourself.
+
+You must supply these parameters in your `form headers` even if you are sending a GET request. If you don't know what `form headers` are, check out [POSTing-to-e621](/docs/POSTing-to-e621.md) in the `docs/` folder.
+
+The required `form headers` parameters look like this for logging in:
+
+```typescript
+{
+    // ...
+    form: {
+        login: "YOUR_E621_USER_NAME",
+        password_hash: "YOUR_API_KEY"
+    }
+}
+```
+
+The example here is for Node.js's `request` library but this should be pretty easy to implement in your favorite language.
+
+**NOTE**: To enable API access, you must go to your account settings and generate an API key. After you have enabled API access **and generated an API key at least once**, you can use the below URL to get your `password_hash`.
+
+```URL
+https://e621.net/user/login.json?name=USERNAME_HERE&password=PASSWORD_HERE
+```
+
+If you do not have an API key generated, you will receive a failed login, even if the details are correct. Also, **be aware of the security risks involved in sending your API key through an unencrypted channel**. 
