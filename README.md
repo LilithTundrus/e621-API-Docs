@@ -28,3 +28,8 @@ https://e621.net/post/index.json?limit=10
 [Try it in your browser](https://e621.net/post/index.json?limit=10)
 </br>
 
+### Breaking down the URL
+
+If you've dealt with REST APIs before this should seem familiar, if not here's a breakdown: The base URL will always be `https://e621.net/`, the next part of the URL `post` indicate the base endpoint we want to access. changing this to something like `artist` would make all `artist` endpoints available to us. The next part of the URL `index` is considered the 'action'. In this case the `index` action retrieves an index of posts. After that, the `.json` part of the URL tells e621 that we want a JSON message returned, as opposed to XML. **Both JSON and XML are available but some endpoints are only available in one or the other**. Lastly are your `parameters`. These change depending on the 'action' you are performing but the allow you to specify the type of data you are receiving from the API. In this case `limit=10` is our parameter. This limits the response from e621 to 10 posts being returned. 
+
+**Note**: Parameters for GET requests must **always** use a `?` to separate the URL from the parameters. Also, any additional parameters beyond the first must be separated with an `&`.
