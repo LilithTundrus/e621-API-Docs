@@ -7,7 +7,7 @@
 This is a repository for a better set of documentation for the site [e621](https://e621.net). If you're here, you know what this site is for.
 </br>
 
-The official documentation is available [here](https://e621.net), but it does not go very in depth on GET/POST endpoints and how they differ. Also some information is incorrect.
+The official documentation is available [here](https://e621.net), but it does not go very in depth on GET/POST endpoints and how they differ. Also some information is incorrect. This documentation is derived from the official API documentation but presented in a different and more in-depth manor.
 
 Any general information will be available on this page. if you want to get more information on any specific endpoint, look in the `docs/` folder of this repo.
 </br>
@@ -43,7 +43,7 @@ Lastly are your `parameters`. These change depending on the 'action' you are per
 
 ### JSONP Support
 
-The API does support JSONP. To use JSONP, append `&callback=mycallbackfunction` to your request. The resulting JSON will be encapsulated to a call to `mycallbackfunction`. 
+The API does support JSONP. To use JSONP, append `&callback=mycallbackfunction` to your request. The resulting JSON will be encapsulated into a call to `mycallbackfunction`. 
 
 #### Example
 
@@ -53,3 +53,22 @@ would return a response like:
 ```javascript
 mycallbackfunction([{"user":"A User","response":null,"body":"Blip one","user_id":1,"id":1}])
 ```
+</br>
+
+### Using cURL
+
+If you are using cURL or something similar, you may experience failurs on your HTTP requests. The API declares this to be a problem with SSL. If this is the case, you will need to point cURL to a trusted certificate to compare the remote site's (e621.net) certificate with. You can get the certificate [here](http://curl.haxx.se/ca/cacert.pem). After you have the cert downloaded, you can point cURL to it like so:
+
+```bash
+curl_setopt($ch, CURLOPT_CAINFO, "/server_dir/apache/cacert.pem");
+```
+
+Alternatively you can disable SSL alltogether (not advised)
+
+</br>
+
+## User-Agent Requirements
+
+Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise.
+
+**NOTE**: Impersonating a browser user-agent will quickly have your IP address blocked from API access by e621.
