@@ -102,21 +102,21 @@ For XML the response looks like this:
 
 e621 also uses standard HTTP responses as well as some custom responses, listed below
 
-| Status Code | Description |
-|-------------|:-----------:|
+| Status Code         | Description        |
+|---------------------|:------------------:|
 | 200 OK	| Request was successful |
-| 403 Forbidden	| Access denied. May indicate that your request lacks a User-Agent header (see Notice #2 above).
-| 404 Not Found	| Not found
-| 420 Invalid Record	| Record could not be saved
-| 421 User Throttled	| User is throttled, try again later
-| 422 Locked	| The resource is locked and cannot be modified
-| 423 Already Exists	| Resource already exists
-| 424 Invalid Parameters	| The given parameters were invalid
-| 500 Internal Server Error	| Some unknown error occurred on the server
-| 502 Bad Gateway	| A gateway server received an invalid response from the e621 servers
-| 503 Service Unavailable	| Server cannot currently handle the request or you have exceeded the request rate limit. Try again later or decrease your rate of requests.
-| 520 Unknown Error	| Unexpected server response which violates protocol
-| 522 Origin Connection Time-out	| CloudFlare's attempt to connect to the e621 servers timed out
-| 524 Origin Connection Time-out	| A connection was established between CloudFlare and the e621 servers, but it timed out before an HTTP response was received
-| 525 SSL Handshake Failed	| The SSL handshake between CloudFlare and the e621 servers failed
+| 403 Forbidden	| Access denied. May indicate that your request lacks a User-Agent header (see Notice #2 above).  |
+| 404 Not Found	| Not found |
+| 420 Invalid Record	| Record could not be saved |
+| 421 User Throttled	| User is throttled, try again later |
+| 422 Locked	| The resource is locked and cannot be modified |
+| 423 Already Exists	| Resource already exists |
+| 424 Invalid Parameters	| The given parameters were invalid |
+| 500 Internal Server Error	| Some unknown error occurred on the server |
+| 502 Bad Gateway	| A gateway server received an invalid response from the e621 servers  |
+| 503 Service Unavailable	| Server cannot currently handle the request or you have exceeded the request rate limit. Try again later or decrease your rate of requests.  |
+| 520 Unknown Error	| Unexpected server response which violates protocol |
+| 522 Origin Connection Time-out	| CloudFlare's attempt to connect to the e621 servers timed out |
+| 524 Origin Connection Time-out	| A connection was established between CloudFlare and the e621 servers, but it timed out before an HTTP response was received |
+| 525 SSL Handshake Failed	| The SSL handshake between CloudFlare and the e621 servers failed |
 
