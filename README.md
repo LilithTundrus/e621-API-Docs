@@ -2,6 +2,8 @@
 
 ## About
 
+_"e621 offers a simple API to make scripting easy. All you need is a way to GET and POST to URLs. The ability to parse JSON or XML responses is nice, but not critical. The simplicity of the API means you can write scripts using JavaScript, Perl, Python, Ruby, even shell languages like bash or tcsh."_
+
 **PLEASE NOTE**: This is still in development/in-depth research phase
 
 This is a repository for a better set of documentation for the site [e621](https://e621.net). If you're here, you know what this site is for.
@@ -151,3 +153,37 @@ https://e621.net/user/login.json?name=USERNAME_HERE&password=PASSWORD_HERE
 ```
 
 If you do not have an API key generated, you will receive a failed login, even if the details are correct. Also, **be aware of the security risks involved in sending your API key through an unencrypted channel**. 
+</br>
+</br>
+
+
+## Available Base Endpoints
+</br>
+
+### Posts
+
+Refer to [Posts](/docs/Posts.md) in the `docs/` folder.
+</br>
+
+
+### Tags
+
+Refer to [Tags](/docs/Tags.md) in the `docs/` folder.
+</br>
+
+PH
+
+PH
+</br>
+</br>
+
+## Contributing
+
+If you would like to contribute to this project feel free to make some changes and open a pull request!
+</br>
+</br>
+
+
+## License
+
+Though just documentation, this project is licensed under the MIT License - see the LICENSE file for details
