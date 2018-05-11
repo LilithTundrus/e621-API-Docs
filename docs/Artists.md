@@ -5,8 +5,9 @@ Description here
 General notes here
 
 ## GET Endpoints
+</br>
 
-### Method Name
+### List
 
 URL + description
 

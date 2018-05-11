@@ -21,7 +21,7 @@ Parameters are:
 - **forum_post** - The accompanying forum post to the tag alias. Can be `all` or `false` (`true` option is the same as all)
 </br>
 
-Below is the basic response schema that you can expect to be returned:
+### Typical Response Example
 
 ```typescript
 [
