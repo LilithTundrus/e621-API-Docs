@@ -7,6 +7,8 @@ Artists are just as they seem. They represent e621 _users_ or even external user
 
 ### List
 
+List artists by a set of given parameters
+
 Base URL is `https://e621.net/artist/index.json.`
 
 #### Parameters
@@ -14,7 +16,6 @@ Base URL is `https://e621.net/artist/index.json.`
 - **limit** - Number of records per page to return
 - **order** - Order of the returned response entries. Can be `date` or `name`
 - **page** - The page number to return
-
 
 #### Typical Response Example
 
@@ -45,13 +46,15 @@ Base URL is `https://e621.net/artist/index.json.`
 
 ### Create
 
+Create a single new artist
+
 Base URL is `https://e621.net/artist/create.json`
 
 #### POST Parameters
 
 `artist[name]` and `artist[urls]` are **required**
 
-- **artist[name]** - The artist's name to create
+- **artist[name]** - The artist's name
 - **artist[urls]** - A list of URLS where the artist can be found
 - **artist[group_name]** - The group the artist is a member of
 - **artist[other_names]** - List of comma-separated named the artist is also known as
@@ -80,9 +83,13 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Destroy
 
+Delete/destroy an artist by ID
+
 Base URL is `https://e621.net/artist/destroy.json`
 
 #### POST Parameters
+
+`id` is **required**
 
 - **id** - The ID of the artist to delete/destroy
 
@@ -106,7 +113,39 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Update
 
-URL + description
+Update an artist's information by their ID
 
-Return JSON
-</br>
+Base URL is `https://e621.net/artist/update.json`
+
+#### POST Parameters
+
+Only the artist's `id` is **required**
+
+- **id** - ID of the artist to update
+- **artist[name]** - The artist's updated name
+- **artist[urls]** - A list of URLS where the artist can be found
+- **artist[is_active]** - Wheteher or not the artist is active
+- **artist[group_name]** - The group the artist is a member of
+- **artist[other_names]** - List of comma-separated named the artist is also known as
+
+#### Example POST Object
+
+```json
+{
+    "artist[name]": "foxxo_new",
+    "artist[urls]": "URL_1 URL_2 URL_3",
+    "artist[group_name]": "foxes united",
+    "artist[is_active]": true,
+    "artist[other_names]": "super_foxxo,test,other_test,updated_name"
+}
+```
+
+#### Response
+
+Response object should look similar to the object below. `?` representing a response property that may or may not be returned
+
+```typescript
+    success: boolean,
+    reason?: string,
+    message?: string
+```

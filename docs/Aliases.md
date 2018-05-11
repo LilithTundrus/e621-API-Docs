@@ -9,6 +9,8 @@ Aliases represent tags that are 'aliased' to other tags as they are very similar
 
 ### List
 
+List aliases by a set of given parameters
+
 Base URL is `https://e621.net/tag_alias/index.json`
 
 #### Parameters
