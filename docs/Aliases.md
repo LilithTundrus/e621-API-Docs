@@ -1,5 +1,7 @@
 # Aliases
 
+Aliases represent tags that are 'aliased' to other tags as they are very similar. This is not the same as a _related_ tag.
+
 **e621 Has Marked this section of the API as incomplete**
 
 ## GET Endpoints
@@ -38,6 +40,7 @@ Below is the basic response schema that you can expect to be returned:
 
 </br>
 </br>
+
 ## POST Endpoints
 </br>
 
