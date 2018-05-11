@@ -14,7 +14,7 @@ Base URL is `https://e621.net/tag_alias/index.json`
 #### Parameters
 
 - **page** - The page number to return
-- **order** - Can be `tag`, `aliasedtag`, `reason`, `user`, `date` or `forum_post`
+- **order** - Order of the returned response enntries. Can be `tag`, `aliasedtag`, `reason`, `user`, `date` or `forum_post`
 - **query** - Search for aliases with the given `query` in their name
 - **user** - Username of the user who submitted the tag alias
 - **approved** - Can be `all`, `true` or `false`
@@ -25,11 +25,11 @@ Base URL is `https://e621.net/tag_alias/index.json`
 ```typescript
 [
     {
-    id: number,
-    name: string,
-    alias_id: number,
-    pending: boolean
-    }
+        id: number,
+        name: string,
+        alias_id: number,
+        pending: boolean
+    },
     //...
 ]
 ```
