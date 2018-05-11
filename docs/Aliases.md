@@ -19,7 +19,6 @@ Parameters are:
 - **user** - Username of the user who submitted the tag alias
 - **approved** - Can be `all`, `true` or `false`
 - **forum_post** - The accompanying forum post to the tag alias. Can be `all` or `false` (`true` option is the same as all)
-</br>
 
 #### Typical Response Example
 
@@ -35,9 +34,9 @@ Parameters are:
 ]
 ```
 
-[Example JSON Request](https://e621.net/tag_alias/index.json?aliased_to=digitigrade&approved=true)
+[Example JSON Request+ Response](https://e621.net/tag_alias/index.json?aliased_to=digitigrade&approved=true)
 
-[Example XML Request](https://e621.net/tag_alias/index.xml?aliased_to=digitigrade&approved=true)
+[Example XML Request + Response](https://e621.net/tag_alias/index.xml?aliased_to=digitigrade&approved=true)
 
 
 </br>
