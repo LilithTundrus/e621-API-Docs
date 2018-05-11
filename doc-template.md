@@ -1,5 +1,7 @@
 ### endpoint name
 
+Endpoint description
+
 Base URL is ``
 
 #### Parameters
@@ -23,9 +25,13 @@ Base URL is ``
 
 ### endpoint name
 
+Endpoint description
+
 Base URL is ``
 
 #### POST Parameters
+
+Required parameters
 
 - **page** - The page number to return
 
