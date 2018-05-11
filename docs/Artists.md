@@ -2,6 +2,8 @@
 
 Artists are just as they seem. They represent e621 _users_ or even external users from another site that create content. This information is used in any _posts_ made to e621.
 
+You can check out how e621 uses this data [here](https://e621.net/artist/index)
+
 ## GET Endpoints
 </br>
 
