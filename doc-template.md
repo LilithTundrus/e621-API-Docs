@@ -37,3 +37,11 @@ Base URL is ``
 ```
 
 #### Response
+
+Response object should look similar to the object below. `?` representing a response property that may or may not be returned
+
+```typescript
+    success: boolean,
+    reason?: string,
+    message?: string
+```
