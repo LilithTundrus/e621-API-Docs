@@ -4,6 +4,7 @@ Artists are just as they seem. They represent e621 _users_ or even external user
 
 You can check out how e621 uses this data [here](https://e621.net/artist/index)
 
+
 ## GET Endpoints
 </br>
 
