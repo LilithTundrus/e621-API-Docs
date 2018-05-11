@@ -35,7 +35,9 @@ Below is the basic response schema that you can expect to be returned:
 ]
 ```
 
-[Example JSON Request](https://e621.net/tag_alias/index.json?aliased_to=digitigrade&approved=true)        [Example XML Request](https://e621.net/tag_alias/index.xml?aliased_to=digitigrade&approved=true)
+[Example JSON Request](https://e621.net/tag_alias/index.json?aliased_to=digitigrade&approved=true)
+
+[Example XML Request](https://e621.net/tag_alias/index.xml?aliased_to=digitigrade&approved=true)
 
 
 </br>
