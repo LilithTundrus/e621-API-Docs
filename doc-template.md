@@ -1,4 +1,4 @@
-### endpoint names
+### endpoint name
 
 Base URL is ``
 
@@ -16,3 +16,24 @@ Base URL is ``
 [Example JSON Request + Response]()
 
 [Example XML Request + Response]()
+
+
+
+// POSTs
+
+### endpoint name
+
+Base URL is ``
+
+#### POST Parameters
+
+- **page** - The page number to return
+
+
+#### Example POST Object
+
+```typescript
+
+```
+
+#### Response
