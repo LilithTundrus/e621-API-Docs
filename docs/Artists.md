@@ -13,6 +13,31 @@ URL + description
 
 Return JSON
 </br>
-
+</br>
 
 ## POST Endpoints
+</br>
+
+### Create
+
+URL + description
+
+#### Parameters
+
+
+Return JSON
+</br>
+
+### Destroy
+
+URL + description
+
+Return JSON
+</br>
+
+### Update
+
+URL + description
+
+Return JSON
+</br>
