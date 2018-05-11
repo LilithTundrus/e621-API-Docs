@@ -9,9 +9,7 @@ Aliases represent tags that are 'aliased' to other tags as they are very similar
 
 ### List
 
-#### URL 
-
-`https://e621.net/tag_alias/index.json`
+Base URL is `https://e621.net/tag_alias/index.json`
 
 #### Parameters
 
@@ -20,7 +18,7 @@ Aliases represent tags that are 'aliased' to other tags as they are very similar
 - **query** - Search for aliases with the given `query` in their name
 - **user** - Username of the user who submitted the tag alias
 - **approved** - Can be `all`, `true` or `false`
-- **forum_post** - The accompanying forum post to the tag alias. Can be `all` or `false` (`true` option is the same as all)
+- **forum_post** - The accompanying forum post to the tag alias. Can be `all`, `true` or `false`
 
 #### Typical Response Example
 
