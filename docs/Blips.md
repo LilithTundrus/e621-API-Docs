@@ -69,9 +69,9 @@ Base URL is `https://e621.net/blip/show.json`
 }
 ```
 
-[Example JSON Request + Response](https://e621.net/blip/index.json)
+[Example JSON Request + Response](https://e621.net/blip/show.json?id=1234)
 
-[Example XML Request + Response](https://e621.net/blip/index.xml)
+[Example XML Request + Response](https://e621.net/blip/show.xml?id=1234)
 </br>
 </br>
 
