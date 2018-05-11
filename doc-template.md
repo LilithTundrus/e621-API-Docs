@@ -38,7 +38,7 @@ Required parameters
 
 #### Example POST Object
 
-```typescript
+```json
 
 ```
 
@@ -51,3 +51,4 @@ Response object should look similar to the object below. `?` representing a resp
     reason?: string,
     message?: string
 ```
+</br>
