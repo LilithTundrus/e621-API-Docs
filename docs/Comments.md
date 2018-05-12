@@ -12,9 +12,9 @@ An index of all comments can be viewed [here](https://e621.net/comment/index) fo
 
 Rettrieve a set of comments based on the given parameters. If none are given you receive the most recent comments made.
 
-25 comments are returned per page and this is not configurable
-
 Base URL is `https://e621.net/comment/index.json`
+
+**Note**: 25 comments are returned per page and this is not configurable
 
 #### Parameters
 
@@ -47,7 +47,7 @@ Base URL is `https://e621.net/comment/index.json`
 
 ### Search
 
-Search comments for any that match a gtiven `query` 
+Search comments for any that match a given `query` 
 
 Base URL is `https://e621.net/comment/search.json`
 
@@ -195,7 +195,7 @@ Hide a comment by  ID
 
 Base URL is `https://e621.net/comment/hide.json`
 
-**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspectives
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
 
 #### POST Parameters
 
@@ -229,7 +229,7 @@ Unhide a comment by  ID
 
 Base URL is `https://e621.net/comment/unhide.json`
 
-**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspectives
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
 
 #### POST Parameters
 
