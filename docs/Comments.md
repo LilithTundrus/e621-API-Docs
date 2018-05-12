@@ -165,7 +165,7 @@ Base URL is `https://e621.net/comment/destroy.json`
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
 - **id** - ID of the comment to delete
 
@@ -191,21 +191,25 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Hide
 
-Endpoint description
+Hide a comment by  ID
 
-Base URL is ``
+Base URL is `https://e621.net/comment/hide.json`
+
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspectives
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
-- **page** - The page number to return
+- **id** - ID of the comment to hide
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 576894
+}
 ```
 
 #### Response
@@ -221,21 +225,25 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Unhide
 
-Endpoint description
+Unhide a comment by  ID
 
-Base URL is ``
+Base URL is `https://e621.net/comment/unhide.json`
+
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspectives
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
-- **page** - The page number to return
+- **id** - ID of the comment to unhide
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 576894
+}
 ```
 
 #### Response
@@ -251,21 +259,24 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Update
 
-Endpoint description
+Update a comment's body. You must be the owner of a comment to update it
 
-Base URL is ``
+Base URL is `https://e621.net/comment/update.json`
 
 #### POST Parameters
 
-Required parameters
+`id` and `comment[body]` are **required**
 
-- **page** - The page number to return
+- **id** - ID of the comment to update
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 576894,
+    "comment[body]": "Updated comment body"
+}
 ```
 
 #### Response
@@ -281,21 +292,26 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Vote
 
-Endpoint description
+Vote is a special endpoint that required an AJAX call. Your request headers must contain `X-Requested-With: XMLHttpRequests`
 
-Base URL is ``
+Base URL is `https://e621.net/comment/vote.json`
+
+**Note**: To remove a vote, send a request using the same `score` given previously (e.g. if it was voted up, vote up again to return to neutral).
 
 #### POST Parameters
 
-Required parameters
+`id` and `score` are **required**
 
-- **page** - The page number to return
-
+- **id** - ID of the comment to vote on
+- **score** - Can be `up` to upvote or `down` to downvote
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 576894,
+    "score": "up"
+}
 ```
 
 #### Response
