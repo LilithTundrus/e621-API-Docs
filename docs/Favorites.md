@@ -1,19 +1,18 @@
 # Favorites
 
-Favorites are a special endpoint relating to posts. There is only one endpoint available for this.
+Favorites are a special endpoint relating to posts. There is only one endpoint available.
 
 ## GET Endpoints
 
 ### List Users
 
-Endpoint description
+List users who have favorited a given post ID
 
-Base URL is ``
+Base URL is `https://e621.net/favorite/list_users.json`
 
 #### Parameters
 
 - **id** - ID of the post to retrieve the favorited users for
-
 
 #### Typical Response Example
 
