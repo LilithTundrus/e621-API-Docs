@@ -1,6 +1,6 @@
 # Dmail
 
-Dmails are e621's semi-custom private messaging relay system. It works kind of like a site specific emailing system rather than something like an IM client.
+Dmails are e621's semi-custom private messaging relay system. It works kind of like a site-specific emailing system rather than something like an IM client.
 
 **Note**: For **ANY** dmail API actions you must be logged in to e621 and provide your API credentials even when using the GET type endpoints
 
