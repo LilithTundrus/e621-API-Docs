@@ -91,174 +91,116 @@ Base URL is `https://e621.net/dmail/create.json`
 
 #### POST Parameters
 
-Required parameters
+`dmail[to_name]`, `dmail[title]` and `dmail[body]` are **required**
 
-- **page** - The page number to return
+- **dmail[parent_id]** - ID of the dmail that the new dmail is in response to
+- **dmail[to_name]** - User's name that the dmail will be sent to
+- **dmail[title]** - Title of the dmail to create
+- **dmail[body]** - Body of the dmail to create (this will not automatically chain together reply bodies if the dmail is responding to another)
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "dmail[to_name]": "test_user",
+    "dmail[title]": "greetings!",
+    "dmail[body]": "hello friend!"
+}
 ```
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failure
 </br>
 
 ### Hide
 
-Endpoint description
+Hide a dmail by ID
 
-Base URL is ``
+Base URL is `https://e621.net/dmail/hide.json`
 
 #### POST Parameters
 
-Required parameters
-
-- **page** - The page number to return
-
+`id` is **required**
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 113
+}
 ```
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failure
 </br>
 
 ### Hide All
 
-Endpoint description
+Hide all dmails in the _inbox_
 
-Base URL is ``
+Base URL is `https://e621.net/dmail/hide_all.json`
 
 #### POST Parameters
 
-Required parameters
-
-- **page** - The page number to return
-
-
-#### Example POST Object
-
-```json
-
-```
+**NONE**
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failure
 </br>
 
 ### Mark All As Read
 
-Endpoint description
+Mark all dmails as read in the _inbox_
 
-Base URL is ``
+Base URL is `https://e621.net/dmail/mark_all_read.json`
 
 #### POST Parameters
 
-Required parameters
-
-- **page** - The page number to return
-
-
-#### Example POST Object
-
-```json
-
-```
+**NONE**
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failures
 </br>
 
 ### Unhide
 
-Endpoint description
+Unhide a dmail by ID
 
-Base URL is ``
+Base URL is `https://e621.net/dmail/unhide.json`
 
 #### POST Parameters
 
-Required parameters
-
-- **page** - The page number to return
-
+`id` is **required**
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 113
+}
 ```
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failure
 </br>
 
 ### Unhide All
 
-Endpoint description
+Unhide all dmails in the _inbox_
 
-Base URL is ``
+Base URL is `https://e621.net/dmail/unhide_all.json`
 
 #### POST Parameters
 
-Required parameters
-
-- **page** - The page number to return
-
-
-#### Example POST Object
-
-```json
-
-```
+**NONE**
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
-
-```typescript
-    success: boolean,
-    reason?: string,
-    message?: string
-```
+On success you will get an XML message redirect string, on error you will get the standard API JSON or XML error message format with a reason for failure
 </br>
