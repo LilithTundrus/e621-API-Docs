@@ -1,6 +1,6 @@
 # Favorites
 
-List users who have favorited a given post's ID
+Favorites are a special endpoint relating to posts. There is only one endpoint available for this.
 
 ## GET Endpoints
 
