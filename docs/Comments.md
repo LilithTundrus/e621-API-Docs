@@ -26,13 +26,17 @@ Base URL is `https://e621.net/comment/index.json`
 #### Typical Response Example
 
 ```typescript
-    id: number,
-    created_at: string,
-    post_id: number,
-    creator: string,
-    creator_id: number,
-    body: string,
-    score: number
+[
+    {
+        id: number,
+        created_at: string,
+        post_id: number,
+        creator: string,
+        creator_id: number,
+        body: string,
+        score: number
+    }
+]
 ```
 
 [Example JSON Request + Response](https://e621.net/comment/index.json?post_id=8595)
@@ -42,27 +46,45 @@ Base URL is `https://e621.net/comment/index.json`
 
 ### Search
 
-Endpoint description
+Search comments for any that match a gtiven `query` 
 
-**e621 has marked this endpoint as incomplete**
-
-Base URL is ``
+Base URL is `https://e621.net/comment/search.json`
 
 #### Parameters
 
-- **** - 
+`query` is **required**
+
+- **query** - The string query to match and return comments
+- **results** - Changes how the `query` string is applied to comments. Can be `fuzzy` or `exact`. Default is `exact`
+- **date_start** - Returns comments created AFTER a given date (yyyy-mm-dd format)
+- **date_end** - Returns comments created BEFORE a given date (yyyy-mm-dd format)
+- **order** - How to sort the results. Can be `date`, `date_asc`, `score` or `score_asc`
+- **post_id** - ID of the post to retrieve comments for
 - **page** - The page number to return
+- **user** - Name of the user to filter the results by
+- **user_id** - ID of the user to filter the results by
+- **status** - Type of comments to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden comments is affected by your permission levels.
 
 
 #### Typical Response Example
 
 ```typescript
-
+[
+    {
+        id: number,
+        created_at: string,
+        post_id: number,
+        creator: string,
+        creator_id: number,
+        body: string,
+        score: number
+    }
+]
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/comment/search.json?date_start=2015-12-31&date_end=2016-12-31&order=score)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/comment/search.xml?date_start=2015-12-31&date_end=2016-12-31&order=score)
 </br>
 
 ### Show
