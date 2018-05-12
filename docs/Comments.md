@@ -125,22 +125,25 @@ Base URL is `https://e621.net/comment/show.json`
 
 ### Create
 
-Endpoint description
+Create a comment
 
-Base URL is ``
+Base URL is `https://e621.net/comment/create.json`
 
 #### POST Parameters
 
-Required parameters
+`comment[post_id]` and `comment[body]` are **required**
 
-- **** - 
-- **page** - The page number to return
+- **comment[anonymous]** - Set to 1 if you want to post a comment anonymously
+- **comment[post_id]** - The post ID number to which you are commenting on
+- **comment[body]** - The body of the comment to create
 
 
 #### Example POST Object
 
 ```json
-
+    "comment[post_id": 123456
+    "comment[anonymous]": 1,
+    "comment[body]": "very wow, much great"
 ```
 
 #### Response
@@ -156,21 +159,23 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Destroy
 
-Endpoint description
+Delete a comment by ID. You must be the owner of a comment or a _Janitor_ level user to delete a comment.
 
-Base URL is ``
+Base URL is `https://e621.net/comment/destroy.json`
 
 #### POST Parameters
 
 Required parameters
 
-- **page** - The page number to return
+- **id** - ID of the comment to delete
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 576894
+}
 ```
 
 #### Response
