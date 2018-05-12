@@ -116,6 +116,8 @@ Hide a blip by its ID
 
 Base URL is `https://e621.net/blip/hide.json`
 
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
+
 #### POST Parameters
 
 `id` is **required**
@@ -146,6 +148,8 @@ Response object should look similar to the object below. `?` representing a resp
 Unhide a blip by its ID
 
 Base URL is `https://e621.net/blip/unhide.json`
+
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
 
 #### POST Parameters
 
