@@ -35,7 +35,8 @@ Base URL is `https://e621.net/comment/index.json`
         creator_id: number,
         body: string,
         score: number
-    }
+    },
+    // ...
 ]
 ```
 
@@ -78,7 +79,8 @@ Base URL is `https://e621.net/comment/search.json`
         creator_id: number,
         body: string,
         score: number
-    }
+    },
+    // ...
 ]
 ```
 
@@ -89,25 +91,32 @@ Base URL is `https://e621.net/comment/search.json`
 
 ### Show
 
-Endpoint description
+Get a comment by ID
 
-Base URL is ``
+Base URL is `https://e621.net/comment/show.json`
 
 #### Parameters
 
-- **** - 
-- **page** - The page number to return
+- **id** - ID of the comment to retrieve
 
 
 #### Typical Response Example
 
 ```typescript
-
+{
+    id: number,
+    created_at: string,
+    post_id: number,
+    creator: string,
+    creator_id: number,
+    body: string,
+    score: number
+}
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/comment/show.json?id=1454578)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/comment/show.xml?id=1454578)
 </br>
 </br>
 
