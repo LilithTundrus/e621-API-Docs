@@ -1,6 +1,6 @@
 # Blips
 
-Blips are a unique type of endpoint. They are like _comments_ but don't relate to a specific post. They are also unlike _forum_ posts as they aren't created around a user-generated topic.
+Blips are a unique type of 'action'. They are like _comments_ but don't relate to a specific post. They are also unlike _forum_ posts as they aren't created around a user-generated topic.
 
 You can check them out yourself [here](https://e621.net/blip/index)
 
