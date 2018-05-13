@@ -1,9 +1,10 @@
 # Implications
 
-
 **e621 Has Marked this section of the API as incomplete**
 
+
 ## GET Endpoints
+</br>
 
 ### List
 
@@ -41,5 +42,6 @@ Base URL is `https://e621.net/tag_implication/index.json`
 </br>
 
 ## POST Endpoints
+</br>
 
 **NONE**

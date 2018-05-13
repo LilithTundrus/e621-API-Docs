@@ -4,7 +4,9 @@ Dmails are e621's semi-custom private messaging relay system. It works kind of l
 
 **Note**: For **ANY** dmail API actions you must be logged in to e621 and provide your API credentials even when using the GET type endpoints
 
+
 ## GET Endpoints
+</br>
 
 ### List
 
@@ -82,6 +84,7 @@ Base URL is `https://e621.net/dmail/show.json`
 </br>
 
 ## POST Endpoints
+</br>
 
 ### Create
 

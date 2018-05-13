@@ -3,7 +3,9 @@
 The forum 'action' contains any endpoints relating to e621's forum posts. Forum posts are different from _comments_ and _blips_. They can either be a parent or a child. Parents are the 'topic' post and children are the 
 'response' posts.
 
+
 ## GET Endpoints
+</br>
 
 ### List
 
@@ -111,6 +113,8 @@ Create a new forum post parent or child
 Base URL is `https://e621.net/forum/create.json`
 
 #### POST Parameters
+</br>
+
 
 `forum_post[body]`, `forum_post[title]` and `forum_post[category_id]` are **required**
 

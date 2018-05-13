@@ -2,7 +2,9 @@
 
 Favorites are a special 'action' relating to posts. There is only one endpoint available.
 
+
 ## GET Endpoints
+</br>
 
 ### List Users
 
@@ -30,5 +32,6 @@ Base URL is `https://e621.net/favorite/list_users.json`
 </br>
 
 ## POST Endpoints
+</br>
 
 **NONE**

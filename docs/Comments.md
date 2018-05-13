@@ -4,7 +4,9 @@ Comments are text entries related to _posts_
 
 An index of all comments can be viewed [here](https://e621.net/comment/index) for reference
 
+
 ## GET Endpoints
+</br>
 
 ### List
 
@@ -122,6 +124,7 @@ Base URL is `https://e621.net/comment/show.json`
 
 
 ## POST Endpoints
+</br>
 
 ### Create
 

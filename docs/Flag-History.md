@@ -2,6 +2,9 @@
 
 The flag history 'action' is for getting the flag history of posts. There is only one endpoint available.
 
+## GET Endpoints
+</br>
+
 ### List
 
 List a set of changes to the flags on a given post by `post_id`, `user_id` or `username`
@@ -36,5 +39,6 @@ Base URL is `https://e621.net/post_flag_history/index.json`
 </br>
 
 ## POST Endpoints
+</br>
 
 **NONE**

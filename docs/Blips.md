@@ -6,6 +6,7 @@ You can check them out yourself [here](https://e621.net/blip/index)
 
 
 ## GET Endpoints
+</br>
 
 ### List
 
@@ -22,7 +23,6 @@ Base URL is `https://e621.net/blip/index.json`
 - **status** - Type of blips to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden blips is affected by your permission levels.
 response_to ID number 
 - **response_to** - Returns blips which are in response to the blip with the given ID.
-
 
 #### Typical Response Example
 
@@ -56,7 +56,6 @@ Base URL is `https://e621.net/blip/show.json`
 
 - **id** - The ID of the blip to retrieve
 
-
 #### Typical Response Example
 
 ```typescript
@@ -76,6 +75,7 @@ Base URL is `https://e621.net/blip/show.json`
 </br>
 
 ## POST Endpoints
+</br>
 
 ### Create
 
