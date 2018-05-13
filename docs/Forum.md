@@ -1,6 +1,7 @@
 # Forum
 
-The forum 'action' contains any endpoints relating to e621's forum posts. The forum posts are separated from _comments_ and _blips_. Forum posts can either be a parent or a child.
+The forum 'action' contains any endpoints relating to e621's forum posts. Forum posts are different from _comments_ and _blips_. They can either be a parent or a child. Parents are the 'topic' post and children are the 
+'response' posts.
 
 ## GET Endpoints
 
@@ -105,21 +106,37 @@ Base URL is `https://e621.net/forum/show.json`
 
 ### Create
 
-Endpoint description
+Create a new forum post parent or child
 
-Base URL is ``
+Base URL is `https://e621.net/forum/create.json`
 
 #### POST Parameters
 
-Required parameters
+`forum_post[body]`, `forum_post[title]` and `forum_post[category_id]` are **required**
 
-- **page** - The page number to return
+- **forum_post[title]** - Title of the forum post to create
+- **forum_post[body]** - Body of the forum post to create
+- **forum_post[parent_id]** - Parent ID that this post is a child of (if any)
+- **forum_post[category_id]** - Category of the forum post. Can be one of the following: 
+    - 1 General
+    - 2 Tag Alias and Implication Suggestions
+    - 3 Art Talk
+    - 5 Off Topic
+    - 9 e621 Tools and Applications
+    - 10 Tag/Wiki Projects and Questions
+    - 11 Site Bug Reports & Feature Requests
+
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "forum_post[body]": "hello forum!",
+    "forum_post[title]": "forum post",
+    "forum_post[parent_id]": 11234,
+    "forum_post[category_id]": 1
+}
 ```
 
 #### Response
@@ -135,21 +152,24 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Hide
 
-Endpoint description
+Hide a forum post by ID
 
-Base URL is ``
+Base URL is `https://e621.net/forum/hide.json`
+
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
-- **page** - The page number to return
-
+- **id** - The ID of the forum post to hide
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 2273
+}
 ```
 
 #### Response
@@ -165,21 +185,24 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Unhide
 
-Endpoint description
+Unhide a forum post by ID
 
-Base URL is ``
+Base URL is `https://e621.net/forum/unhide.json`
+
+**Note**: This does not effect the API-facing endpoints and is typically only done from a user's perspective
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
-- **page** - The page number to return
-
+- **id** - The ID of the forum post to unhide
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 2273
+}
 ```
 
 #### Response
@@ -195,21 +218,34 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Update
 
-Endpoint description
+Update a forum post. Note you must be the owner of the post with the given ID
 
-Base URL is ``
+Base URL is `https://e621.net/forum/updates.json`
 
 #### POST Parameters
 
-Required parameters
+`id` and one other parameter is **required
 
-- **page** - The page number to return
-
+- **id** - ID of the forum post to update
+- **forum_post[title]** - Updated title of the forum post
+- **forum_post[body]** - Updated body of the forum post
+- **forum_post[category_id]** - Updated category of the forum post. Can be one of the following: 
+    - 1 General
+    - 2 Tag Alias and Implication Suggestions
+    - 3 Art Talk
+    - 5 Off Topic
+    - 9 e621 Tools and Applications
+    - 10 Tag/Wiki Projects and Questions
+    - 11 Site Bug Reports & Feature Requests
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 1223,
+    "forum_post[body]": "Ohh, an update!",
+    "forum_post[title]": "Edited title",
+}
 ```
 
 #### Response
