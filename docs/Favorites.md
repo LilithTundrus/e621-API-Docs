@@ -1,6 +1,6 @@
 # Favorites
 
-Favorites are a special endpoint relating to posts. There is only one endpoint available.
+Favorites are a special 'action' relating to posts. There is only one endpoint available.
 
 ## GET Endpoints
 
