@@ -8,7 +8,7 @@ Notes are related to posts. They are overlayed sets of text relating to somethin
 
 ### History
 
-Get the note history of a post using `id`, `post_id` or `user_id`
+Get the note history of a post using `id`, `post_id` or `user_id`. Giving no extra parameters will give you a list of every note version
 
 Base URL is `https://e621.net/note/history.json`
 
@@ -134,14 +134,14 @@ Base URL is `https://e621.net/note/create.jsons`
 
 As this endpoint is for creating AND updating, no parameters are technically required
 
--**id If you are updating a note, this is the ID number of the note to update.
--**note[post_id] The ID of the post this note belongs to
--**note[x]** - The x coordinate of the note
--**note[y]** - The y coordinate of the note
--**note[width]** - The width of the note's text box
--**note[height]** - The height of the note's text box
--**note[is_active]** - Whether or not the note is visible. Set to `1` for active, `0` for inactive
--**note[body]** - The note's message
+- **id** - If you are updating a note, this is the ID number of the note to update.
+- **note[post_id]** - The ID of the post this note belongs to
+- **note[x]** - The x coordinate of the note
+- **note[y]** - The y coordinate of the note
+- **note[width]** - The width of the note's text box
+- **note[height]** - The height of the note's text box
+- **note[is_active]** - Whether or not the note is visible. Set to `1` for active, `0` for inactive
+- **note[body]** - The note's message
 
 #### Example POST Object
 
