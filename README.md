@@ -279,6 +279,12 @@ Refer to [Tickets](/docs/Tickets.md) in the `docs/` folder.
 </br>
 </br>
 
+## Errors?
+
+If you find any errors in this documentation please let me know! I try my best but I am only human
+</br>
+</br>
+
 ## Contributing
 
 If you would like to contribute to this project feel free to make some changes and open a pull request!
