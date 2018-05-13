@@ -126,26 +126,37 @@ Base URL is `https://e621.net/note/search.json`
 
 ### Create/Update
 
-Endpoint description
+For notes, create/update are on the same endpoint. If you supply an id parameter, then e621 will assume you're updating an existing note. Otherwise, it will create a new note
 
-Base URL is ``
+Base URL is `https://e621.net/note/create.jsons`
 
 #### POST Parameters
 
-Required parameters
+As this endpoint is for creating AND updating, no parameters are technically required
 
-- **page** - The page number to return
-
+-**id If you are updating a note, this is the ID number of the note to update.
+-**note[post_id] The ID of the post this note belongs to
+-**note[x]** - The x coordinate of the note
+-**note[y]** - The y coordinate of the note
+-**note[width]** - The width of the note's text box
+-**note[height]** - The height of the note's text box
+-**note[is_active]** - Whether or not the note is visible. Set to `1` for active, `0` for inactive
+-**note[body]** - The note's message
 
 #### Example POST Object
 
 ```json
-
+{
+    "note[post_id": 12345,
+    "note[body]": "A note about this post"
+}
 ```
 
 #### Response
 
-Response object should look similar to the object below. `?` representing a response property that may or may not be returned
+If the note doesn't exist you may get back an error that says something like "the note could not be found".
+
+Response object should look similar to the object below. `?` representing a response property that may or may not be returned.
 
 ```typescript
     success: boolean,
@@ -156,21 +167,24 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Revert
 
-Endpoint description
+Revert a note, given an earlier version number of that note
 
-Base URL is ``
+Base URL is `https://e621.net/note/revert.json`
 
 #### POST Parameters
 
-Required parameters
+`id` and `version` are **required**
 
-- **page** - The page number to return
-
+- **id** - ID of the note to update
+- **version** - The version number to revert to.
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 123456,
+    "version": 4
+}
 ```
 
 #### Response
