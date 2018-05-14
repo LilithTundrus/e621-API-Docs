@@ -1,6 +1,6 @@
 # Tags
 
-Tags are descriptive strings relating to posts. They do contain their own set of informations as well
+Tags are descriptive strings relating to _posts_. They do contain their own set of informations as well.
 
 
 ## GET Endpoints
@@ -8,7 +8,7 @@ Tags are descriptive strings relating to posts. They do contain their own set of
 
 ### List
 
-Endpoint description
+List an index of tahs, filtering by a set of given parameters
 
 Base URL is `https://e621.net/tag/index.json`
 

@@ -6,6 +6,6 @@ The wiki endpoints are very unstable/buggy and should not be used for any seriou
 
 You can find the official docs [here](https://e621.net/help/show/api#wiki).
 
-**Note**: The `List` endpoint does NOT take parameters despite what the docs say
+**Note**: The `List` endpoint does NOT take parameters despite what the docs say.
 
-**Note**: The `History` endpoint can sometimes return a 500 error
+**Note**: The `History` endpoint can sometimes return a 500 error.

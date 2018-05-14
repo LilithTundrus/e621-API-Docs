@@ -2,7 +2,7 @@
 
 Posts are the main section of e621. They are media uploaded by users or the artists themselves. They contain a set of _tags_ that describe the post, _notes_ about the post. They can also be _commented_ on. A lot of e621 'actions' revolve around them. 
 
-An index of all most recent posts can be found [here](https://e621.net/post/index)
+An index of all most recent posts can be found [here](https://e621.net/post/index).
 
 
 ## GET Endpoints
@@ -16,7 +16,7 @@ Base URL is `https://e621.net/post/check_md5.json`
 
 #### Parameters
 
-- **md5** - The md5 hash of the file to matchs
+- **md5** - The md5 hash of the file to match
 
 #### Typical Response Example
 
@@ -39,7 +39,7 @@ Get the index of deleted posts
 
 Base URL is `https://e621.net/post/deleted_index.json`
 
-**Note**: the following fields are not available for deleted posts: source, sources, md5, file_size, file_ext, preview_width, preview_height, sample_url, sample_width, sample_height, has_children, children
+**Note**: the following fields are not available for deleted posts: `source`, `sources`, `md5`, `file_size`, `file_ext`, `preview_width`, `preview_height`, `sample_url`, `sample_width`, `sample_height`, `has_children`, `children`
 
 #### Parameters
 
@@ -91,13 +91,13 @@ List all posts, filtered by a set of given parameters.
 
 The most efficient method to iterate a large number of posts is to use `before_id` starting at the highest ID, and then successively request the lowest ID returned each time. When iterating using page, posts will shift between pages if posts meeting the tags search criteria are deleted or added to the site between requests
 
-**Note**: Page numbers greater than 750 will return an error
+**Note**: Page numbers greater than 750 will return an error.
 
 **Note**: Deleted posts are not returned.
 
-**Note**: Deleted posts still count towards the number of posts returned in `page` requests if `status:any` or `status:delete` is part of the tags search criteria. Deleted posts are not returned either way. JSON requests do not report any post count
+**Note**: Deleted posts still count towards the number of posts returned in `page` requests if `status:any` or `status:delete` is part of the tags search criteria. Deleted posts are not returned either way. JSON requests do not report any post count.
 
-**Note**: Sorting results with `order:` using tags does nothing in conjunction with `before_id`
+**Note**: Sorting results with `order:` using tags does nothing in conjunction with `before_id`.
 
 Base URL is `https://e621.net/post/index.json`
 
@@ -163,7 +163,7 @@ Base URL is `https://e621.net/post/index.json`
 
 ### Popular
 
-Get popluar posts, the interval based off of the base URL.
+Get popluar posts. The popularity interval is based off of the base URL.
 
 Base URLs are `/post/popular_by_day.json`, `/post/popular_by_week.json`, and `/post/popular_by_month.json`
 
@@ -229,7 +229,7 @@ Show a single post's information by ID or MD5 hash
 
 Base URL is `https://e621.net/post/show.json`
 
-**Note**: Do not use the /post/show API for bulk requests. Use of /post/index allows returning multiple results and is more efficient, while also returning the same information
+**Note**: Do not use the /post/show API for bulk requests. Use of /post/index allows returning multiple results and is more efficient, while also returning the same information.
 
 #### Parameters
 
@@ -338,7 +338,6 @@ Base URL is `https://e621.net/post/create.json`
 - **post[is_rating_locked]** - Set to `true` to prevent others from changing the rating
 - **post[is_note_locked]** - Set to `true` to prevent others from adding notes
 - **post[parent_id]** - The ID of the parent post (if any)
-
 
 #### Example POST Object
 
@@ -459,7 +458,6 @@ Required parameters
 - **id** - ID of the post to revert the tags of
 - **history_id** - Version number to revert the tags to
 
-
 #### Example POST Object
 
 ```json
@@ -533,7 +531,6 @@ Base URL is `https://e621.net/post/vote.json`
 
 - **id** - ID of the post to vote for
 - **score** - Set to `1` to upvote, `-1` to downvote
-
 
 #### Example POST Object
 

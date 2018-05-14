@@ -9,7 +9,7 @@ Users are pretty straightforward. They represemt people (or bots) using the e621
 
 List users, filtering by a given set of parameters. If no parameters are given you will get a listing of all users.
 
-Base URL is ``
+Base URL is `https://e621.net/user/index.json`
 
 #### Parameters
 

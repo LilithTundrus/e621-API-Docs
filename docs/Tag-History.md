@@ -1,6 +1,6 @@
 # Tag History
 
-Tag History is a special 'action' it gets the tag history of ALL posts. Due to performance issues, this 'atcion' does not use page numbers. Instead, it takes an ID and returns the next/previous [limit] results. To traverse forward (back in time) through multiple pages of results, set the after parameter of the next request to the ID of the last result in the current result set. Or to go backwards (towards more recently) through results, set before to the ID of the first result in the current result set
+Tag History is a special 'action' it gets the tag history of ALL posts. Due to performance issues, this 'atcion' does not use page numbers. Instead, it takes an ID and returns the next/previous [limit] results. To traverse forward (back in time) through multiple pages of results, set the after parameter of the next request to the ID of the last result in the current result set. Or to go backwards (towards more recently) through results, set before to the ID of the first result in the current result set.
 
 **Note**: Tag history isn't a well documented/well understood part of the e721 API
 
@@ -46,8 +46,7 @@ limit How many results to return at once. Defaults to 100 and limited to 1000.
 
 [Example XML Request + Response](https://e621.net/post_tag_history/index.xmls)
 </br>
-
-
+</br>
 
 ## POST Endpoints
 </br>

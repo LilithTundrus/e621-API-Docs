@@ -1,8 +1,9 @@
 # Pools
 
-Pools are collections of posts. They differ from _sets_ as they don't folow a certain topic but are generally related (IE a comic book's set of pages)
+Pools are collections of posts. They differ from _sets_ as they don't folow a certain topic but are generally related (IE a comic book's set of pages).
 
-**NOTE**: Any GET endpoints for pools are _significantly slower_ than the XML counterparts. A reason is not given for this but you need to be aware when pulling data that JSON can be up to 30x slower
+**NOTE**: Any GET endpoints for pools are _significantly slower_ than the XML counterparts. A reason is not given for this but you need to be aware when pulling data that JSON can be up to 30x slower.
+
 
 ## GET Endpoints
 </br>
@@ -55,7 +56,7 @@ Base URL is `https://e621.net/pool/show.json`
 
 ```typescript
 {
-        created_at: { json_class: 'Time', s: number, n: number },
+    created_at: { json_class: 'Time', s: number, n: number },
     description: string,
     id: number,
     is_active: boolean,
@@ -92,7 +93,6 @@ Base URL is `https://e621.net/pool/add_post.json`
 
 - **pool_id** -  ID of the pool to add the post to
 - **post_id** -  ID of the post to add
-
 
 #### Example POST Object
 
@@ -200,6 +200,7 @@ Base URL is `https://e621.net/pool/remove_post.json`
     "post_id": 12345
 }
 ```
+
 #### Response
 
 Response object should look similar to the object below. `?` representing a response property that may or may not be returned

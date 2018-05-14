@@ -1,10 +1,11 @@
 # Sets
 
-Sets are similar to _pools_ but are about a generic topic rather than related posts
+Sets are similar to _pools_ but are about a generic topic rather than related posts.
 
-**Note**: Like _pools_, _sets_ endpoints for JSOn can be up to 30x slower than XML due to how e621 processes data
+**Note**: Like _pools_, _sets_ endpoints for JSOn can be up to 30x slower than XML due to how e621 processes data.
 
-**Note**: I haven't bothered to document the maintainers endpoints for sets as they are confusing and very rarely utilized
+**Note**: I haven't bothered to document the maintainers endpoints for sets as they are confusing and very rarely utilized.
+
 
 ## GET Endpoints
 </br>
@@ -37,7 +38,8 @@ Base URL is `https://e621.net/set/index.json`
         post_count: number,
         public: boolean,
         transfer_to_parent_on_delete: boolean
-    }
+    },
+    // ...
 ]
 ```
 
@@ -48,7 +50,7 @@ Base URL is `https://e621.net/set/index.json`
 
 ### Show
 
-Get a single set's information by IDs
+Get a single set's information by ID
 
 Base URL is `https://e621.net/set/show.json`
 
@@ -118,13 +120,13 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Create
 
-Create an empty set
+Create a new (empty) set
 
 Base URL is `https://e621.net/set/create.json`
 
 #### POST Parameters
 
-All parameters are required
+All parameters are **required**
 
 - **set[name]** - The name of the set
 - **set[shortname]** - The short name of the set
@@ -157,8 +159,7 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Destroy
 
-Delete a set. You must either own/maintain the set of be a moderator
-s
+Delete a set. You must either own/maintain the set or be a moderator
 Base URL is `https://e621.net/set/destroy.json`
 
 #### POST Parameters
@@ -229,14 +230,12 @@ Base URL is `https://e621.net/set/update.json`
 
 only `set[id]` is **required**
 
-
 - **set[id]** - ID of the set to update
 - **set[name]** - The name of the set
 - **set[shortname]** - The short name of the set
 - **set[description]** - The description of the set
 - **set[public]** - Whether to make the set public (true) or private (false)
 - **set[transfer_to_parent_on_delete]** - Whether to replace deleted posts with their parents
-
 
 #### Example POST Object
 
