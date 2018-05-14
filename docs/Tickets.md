@@ -1,17 +1,3 @@
 # Tickets
 
-Description here
-
-General notes here
-
-## GET Endpoints
-
-### Method Name
-
-URL + description
-
-Return JSON
-</br>
-
-
-## POST Endpoints
+Tickets are e621 trouble tickets, you can find the official docs [here](https://e621.net/help/show/api#tickets)
