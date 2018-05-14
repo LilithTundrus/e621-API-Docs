@@ -1,6 +1,8 @@
 # Posts
 
-Posts are the main section of e621. They are media uploaded by users or the artists themselves. They contain a set of _tags_ that describe the post, _notes_ about the post. The can also be _commented_ on. A lot of e621 'actions' revolve around them. An index of all most recent posts can be found [here](https://e621.net/post/index)
+Posts are the main section of e621. They are media uploaded by users or the artists themselves. They contain a set of _tags_ that describe the post, _notes_ about the post. They can also be _commented_ on. A lot of e621 'actions' revolve around them. 
+
+An index of all most recent posts can be found [here](https://e621.net/post/index)
 
 
 ## GET Endpoints
@@ -61,30 +63,17 @@ Base URL is `https://e621.net/post/deleted_index.json`
         creator_id: number,
         author: string,
         change: number,
-        source: string,
         score: number,
         fav_count: number,
-        md5: string,
-        file_size: number,
         file_url: string,
-        file_ext: string,
-        preview_url: string,
-        preview_width: number,
-        preview_height: number,
-        sample_url: string,
-        sample_width: number,
-        sample_height: number,
         rating: string,
         status: string,
         width: number,
         height: number,
         has_comments: boolean,
         has_notes: boolean,
-        has_children: boolean,
-        children: number,
         parent_id: number,
         artist: string[],
-        sources: string[],
         delreason: string
     },
     // ...
@@ -98,7 +87,13 @@ Base URL is `https://e621.net/post/deleted_index.json`
 
 ### List
 
-List all posts, filtered by a set of given parameters. Deleted posts are not returned. The most efficient method to iterate a large number of posts is to use before_id starting at the highest ID, and then successively request the lowest ID returned each time. When iterating using page, posts will shift between pages if posts meeting the tags search criteria are deleted or added to the site between requests. Page numbers greater than 750 will return an error.
+List all posts, filtered by a set of given parameters. 
+
+The most efficient method to iterate a large number of posts is to use `before_id` starting at the highest ID, and then successively request the lowest ID returned each time. When iterating using page, posts will shift between pages if posts meeting the tags search criteria are deleted or added to the site between requests
+
+**Note**: Page numbers greater than 750 will return an error
+
+**Note**: Deleted posts are not returned.
 
 **Note**: Deleted posts still count towards the number of posts returned in `page` requests if `status:any` or `status:delete` is part of the tags search criteria. Deleted posts are not returned either way. JSON requests do not report any post count
 
@@ -112,7 +107,7 @@ Base URL is `https://e621.net/post/index.json`
 - **before_id** - Returns the next `limit` posts with IDs lower than the given ID
 - **page** - The page number to return
 - **tags** -  The tag search query, only returns posts that match the given spcae-delimited tags
-- **typed_tags** - Set to true to return typed tag information. The tags value returned is a dictionary with each tag type as a key and then a list of tags of that type
+- **typed_tags** - Set to `true` to return typed tag information. The tags value returned is a dictionary with each tag type as a key and then a list of tags of that type
 
 #### Typical Response Example
 
@@ -389,7 +384,7 @@ Base URL is `https://e621.net/post/destroy.json`
 
 - **id** - ID of the post to delete
 - **reason** - Reason the post is being deleted
-- ** mode** - Set to `1` if you are attempting to permanently destroy this post (will only work if called on an already deleted post)
+- **mode** - Set to `1` if you are attempting to permanently destroy this post (will only work if called on an already deleted post)
 
 #### Example POST Object
 
