@@ -4,14 +4,35 @@ Description here
 
 General notes here
 
+
 ## GET Endpoints
+</br>
 
-### Method Name
+### Show
+Endpoint description
 
-URL + description
+Base URL is ``
 
-Return JSON
+#### Parameters
+
+- **page** - The page number to return
+
+
+#### Typical Response Example
+
+```typescript
+
+```
+
+[Example JSON Request + Response]()
+
+[Example XML Request + Response]()
+</br>
+
 </br>
 
 
 ## POST Endpoints
+</br>
+
+**NONE**
