@@ -4,8 +4,6 @@
 
 _"e621 offers a simple API to make scripting easy. All you need is a way to GET and POST to URLs. The ability to parse JSON or XML responses is nice, but not critical. The simplicity of the API means you can write scripts using JavaScript, Perl, Python, Ruby, even shell languages like bash or tcsh."_
 
-**PLEASE NOTE: This is still in development phase**
-
 This is a repository for a better set of documentation for the site [e621](https://e621.net). If you're here, you know what this site is for.
 </br>
 
@@ -21,7 +19,7 @@ Any general information will be available on this page. if you want to get more 
 The e621 API uses the two main HTTP REST methods, **GET** and **POST**. This is how you interact with the API, through REST URL endpoints. Any time you are retrieving data from the API you are using GET, any time your are giving the API information you are using POST.
 </br>
 
-e621 treats REST URLs as functions, so when you are GETting data, you pass your desired options after the base URL (separated by a `?`)
+e621 treats REST URLs as functions, so when you are GETting data, you pass your desired options after the base URL (separated by a `?`).
 
 A basic example looks like this:
 ```url
@@ -65,14 +63,14 @@ If you are using cURL or something similar, you may experience failurs on your H
 curl_setopt($ch, CURLOPT_CAINFO, "/server_dir/apache/cacert.pem");
 ```
 
-Alternatively you can disable SSL alltogether (not advised)
+Alternatively you can disable SSL alltogether (not advised).
 </br>
 </br>
 
 
 ## User-Agent Requirements
 
-Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise. (EX: `my-username/myproject-1.0`)
+Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise. (EX: `my-username/myproject-1.0`).
 
 **NOTE**: Impersonating a browser user-agent will quickly have your IP address blocked from API access by e621.
 </br>
@@ -147,7 +145,7 @@ The required `form headers` parameters look like this for logging in:
 
 The example here is for Node.js's `request` library but this should be pretty easy to implement in your favorite language.
 
-**Every time you are making a GET/POST call to the API you must supply your information within the `form header`.**
+**Every time you are making a GET/POST call to the API you must supply your information within the `form header`**..
 
 **NOTE**: To enable API access, you must go to your account settings and generate an API key. After you have enabled API access **and generated an API key at least once**, you can use the below URL to get your `password_hash`.
 
@@ -281,7 +279,7 @@ Refer to [Tickets](/docs/Tickets.md) in the `docs/` folder.
 
 ## Errors?
 
-If you find any errors in this documentation please let me know! I try my best but I am only human
+If you find any errors in this documentation please let me know! I try my best but I am only human.
 </br>
 </br>
 
@@ -294,4 +292,4 @@ If you would like to contribute to this project feel free to make some changes a
 
 ## License
 
-Though just documentation, this project is licensed under the MIT License - see the LICENSE file for details
+Though just documentation, this project is licensed under the MIT License - see the LICENSE file for details.
