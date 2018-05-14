@@ -22,8 +22,7 @@ Base URL is `https://e621.net/comment/index.json`
 
 - **post_id** - ID of the post to retrive comments made on that post
 - **page** - The page number to return
-- **status** - Type of comments to retrieve Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden comments is affected by your permission levels.
-
+- **status** - Type of comments to retrieve Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden comments is affected by your permission levels
 
 #### Typical Response Example
 
@@ -49,7 +48,7 @@ Base URL is `https://e621.net/comment/index.json`
 
 ### Search
 
-Search comments for any that match a given `query` 
+Search for any comments that match a given `query` 
 
 Base URL is `https://e621.net/comment/search.json`
 
@@ -66,8 +65,7 @@ Base URL is `https://e621.net/comment/search.json`
 - **page** - The page number to return
 - **user** - Name of the user to filter the results by
 - **user_id** - ID of the user to filter the results by
-- **status** - Type of comments to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden comments is affected by your permission levels.
-
+- **status** - Type of comments to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden comments is affected by your permission levels
 
 #### Typical Response Example
 
@@ -99,8 +97,9 @@ Base URL is `https://e621.net/comment/show.json`
 
 #### Parameters
 
-- **id** - ID of the comment to retrieve
+`id` parameter is **required**
 
+- **id** - ID of the comment to retrieve
 
 #### Typical Response Example
 
@@ -136,7 +135,7 @@ Base URL is `https://e621.net/comment/create.json`
 
 `comment[post_id]` and `comment[body]` are **required**
 
-- **comment[anonymous]** - Set to 1 if you want to post a comment anonymously
+- **comment[anonymous]** - Set to `1` if you want to post a comment anonymously
 - **comment[post_id]** - The post ID number to which you are commenting on
 - **comment[body]** - The body of the comment to create
 
@@ -162,7 +161,7 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Destroy
 
-Delete a comment by ID. You must be the owner of a comment or a _Janitor_ level user to delete a comment.
+Delete a comment by ID. You must be the owner of a comment or a _Janitor_ level user to delete a comment
 
 Base URL is `https://e621.net/comment/destroy.json`
 
@@ -171,7 +170,6 @@ Base URL is `https://e621.net/comment/destroy.json`
 `id` is **required**
 
 - **id** - ID of the comment to delete
-
 
 #### Example POST Object
 
@@ -206,7 +204,6 @@ Base URL is `https://e621.net/comment/hide.json`
 
 - **id** - ID of the comment to hide
 
-
 #### Example POST Object
 
 ```json
@@ -240,7 +237,6 @@ Base URL is `https://e621.net/comment/unhide.json`
 
 - **id** - ID of the comment to unhide
 
-
 #### Example POST Object
 
 ```json
@@ -271,7 +267,6 @@ Base URL is `https://e621.net/comment/update.json`
 `id` and `comment[body]` are **required**
 
 - **id** - ID of the comment to update
-
 
 #### Example POST Object
 

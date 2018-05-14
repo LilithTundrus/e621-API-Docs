@@ -2,7 +2,7 @@
 
 Artists are just as they seem. They represent e621 _users_ or even external users from another site that create content. This information is used in any _posts_ made to e621.
 
-You can check out how e621 uses this data [here](https://e621.net/artist/index)
+You can check out how e621 uses this data [here](https://e621.net/artist/index).
 
 
 ## GET Endpoints
@@ -10,7 +10,7 @@ You can check out how e621 uses this data [here](https://e621.net/artist/index)
 
 ### List
 
-List artists by a set of given parameters
+List artists, filtering by a set of given parameters
 
 Base URL is `https://e621.net/artist/index.json.`
 

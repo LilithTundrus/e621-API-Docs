@@ -2,7 +2,7 @@
 
 Blips are a unique type of 'action'. They are like _comments_ but don't relate to a specific post. They are also unlike _forum_ posts as they aren't created around a user-generated topic.
 
-You can check them out yourself [here](https://e621.net/blip/index)
+You can check them out yourself [here](https://e621.net/blip/index).
 
 
 ## GET Endpoints
@@ -20,9 +20,8 @@ Base URL is `https://e621.net/blip/index.json`
 - **body** - Return blips that match a given string in the message body
 - **page** - The page number to return
 - **limit** - Number of records per page to return. Limit cannot be set over 100
-- **status** - Type of blips to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden blips is affected by your permission levels.
-response_to ID number 
-- **response_to** - Returns blips which are in response to the blip with the given ID.
+- **status** - Type of blips to retrieve. Can be `hidden`, `active` or `any`. Note that whether or not you can see other user's hidden blips is affected by your permission levels
+- **response_to** - Returns blips which are in response to the blip with the given ID
 
 #### Typical Response Example
 
@@ -46,7 +45,7 @@ response_to ID number
 
 ### Show
 
-Show a blip by its ID
+Show a blip by ID
 
 Base URL is `https://e621.net/blip/show.json`
 
@@ -87,7 +86,7 @@ Base URL is `https://e621.net/blip/create.json`
 
 `body` parameter is **required**
 
-- **blip[body]** - The blip's body texts
+- **blip[body]** - The blip's body text
 - **blip[response]** - Blip ID that the new blip is in response to (optional)
 
 #### Example POST Object
@@ -112,7 +111,7 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Hide
 
-Hide a blip by its ID
+Hide a blip by ID
 
 Base URL is `https://e621.net/blip/hide.json`
 
@@ -145,7 +144,7 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Unhide
 
-Unhide a blip by its ID
+Unhide a blip by ID
 
 Base URL is `https://e621.net/blip/unhide.json`
 
@@ -184,7 +183,7 @@ Base URL is `https://e621.net/blip/update.json`
 
 #### POST Parameters
 
-`id` and `body`  are **required
+`id` and `body`  are **required**
 
 - **id** - ID of the blip to update
 - **blip[body]** - The new body of the blip

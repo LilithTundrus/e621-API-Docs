@@ -4,7 +4,7 @@ Aliases represent tags that are 'aliased' to other tags as they are very similar
 
 **e621 Has Marked this section of the API as incomplete**
 
-To get an idea of how aliases work, check out the public logs [here](https://e621.net/tag_alias?order=date)
+To get an idea of how aliases work, check out the public logs [here](https://e621.net/tag_alias?order=date).
 
 
 ## GET Endpoints
@@ -35,7 +35,7 @@ Base URL is `https://e621.net/tag_alias/index.json`
         alias_id: number,
         pending: boolean
     },
-    //...
+    // ...
 ]
 ```
 
