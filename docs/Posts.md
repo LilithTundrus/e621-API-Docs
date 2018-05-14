@@ -37,6 +37,8 @@ Get the index of deleted posts
 
 Base URL is `https://e621.net/post/deleted_index.json`
 
+**Note**: the following fields are not available for deleted posts: source, sources, md5, file_size, file_ext, preview_width, preview_height, sample_url, sample_width, sample_height, has_children, children
+
 #### Parameters
 
 - **user_id** - ID of the user to filter post uploads by
@@ -166,14 +168,13 @@ Base URL is `https://e621.net/post/index.json`
 
 ### Popular
 
-Endpoint description
+Get popluar posts, the interval based off of the base URL.
 
-Base URL is ``
+Base URLs are `/post/popular_by_day.json`, `/post/popular_by_week.json`, and `/post/popular_by_month.json`
 
 #### Parameters
 
-- **page** - The page number to return
-
+**NONE**
 
 #### Typical Response Example
 
@@ -222,36 +223,75 @@ Base URL is ``
 ]
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/post/popular_by_day.json)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/post/popular_by_day.xml)
 </br>
 
 ### Show
 
-Endpoint description
+Show a single post's information by ID or MD5 hash
 
-Base URL is ``
+Base URL is `https://e621.net/post/show.json`
+
+**Note**: Do not use the /post/show API for bulk requests. Use of /post/index allows returning multiple results and is more efficient, while also returning the same information
 
 #### Parameters
 
-- **page** - The page number to return
-
+- **id** - ID of the post to retrieve
+- **md5** - MD5 hash of the post to retrieve
 
 #### Typical Response Example
 
 ```typescript
-
+    id: number,
+    tags: string,
+    locked_tags: string,
+    description: string,
+    created_at: {
+        json_class: string,
+        s: number,
+        n: number
+    },
+    creator_id: number,
+    author: string,
+    change: number,
+    source: string,
+    score: number,
+    fav_count: number,
+    md5: string,
+    // in bytes
+    file_size: number,
+    file_url: string,
+    file_ext: string,
+    preview_url: string,
+    preview_width: number,
+    preview_height: number,
+    sample_url: string,
+    sample_width: number,
+    sample_height: number,
+    rating: string,
+    status: string,
+    width: number,
+    height: number,
+    has_comments: boolean,
+    has_notes: boolean,
+    has_children: boolean,
+    children: number,
+    parent_id: number,
+    artist: string[],
+    sources: string[],
+    delreason: string
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/post/show.json?id=8595)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/post/show.xml?id=8595)
 </br>
 
 ### Tags
 
-Endpoint description
+Get the tags of a post by ID or MD5 hash
 
 Base URL is ``
 
