@@ -1,6 +1,6 @@
 # User Records
 
-User records are 'affixes' that can be assigned to users. The can be found on users in the _Users_ 'action' section. There is only one endpoint available for user records
+User records are 'affixes' that can be assigned to users. The can be found on users in the _Users_ 'action' section. There is only one endpoint available for user records.
 
 
 ## GET Endpoints
