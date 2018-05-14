@@ -54,7 +54,19 @@ Base URL is `https://e621.net/pool/show.json`
 #### Typical Response Example
 
 ```typescript
-
+{
+        created_at: { json_class: 'Time', s: number, n: number },
+    description: string,
+    id: number,
+    is_active: boolean,
+    is_locked: boolean,
+    name: string,
+    post_count: number,
+    updated_at: { json_class: 'Time', s: number, n: number },
+    user_id: number,
+    // an array of e621 posts
+    posts: e621PostData[]
+}
 ```
 
 [Example JSON Request + Response](https://e621.net/pool/show.json?id=14167)
