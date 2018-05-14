@@ -75,24 +75,47 @@ Base URL is ``
 
 ### Show
 
-Endpoint description
+Get a user's information by ID. If an ID is not given you will get the information of the user you are logged in as through the APIs
 
-Base URL is ``
+Base URL is `https://e621.net/user/show.json`
 
 #### Parameters
 
-- **page** - The page number to return
-
+- **id** - ID of the user to retrieve
 
 #### Typical Response Example
 
 ```typescript
-
+{
+    name: string,
+    id: number
+    level: e621UserLevels,
+    created_at: string,
+    avatar_id: number,
+    stats:
+    {
+        post_count: number,
+        del_post_count: number,
+        edit_count: number,
+        favorite_count: number,
+        wiki_count: number,
+        forum_post_count: number,
+        note_count: number,
+        comment_count: number,
+        blip_count: number,
+        set_count: number,
+        pool_update_count: number,
+        pos_user_records: number,
+        neutral_user_records: number,
+        neg_user_records: number
+    },
+    artist_tags: string[]
+}
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/user/show.json)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/user/show.xml)
 </br>
 
 
