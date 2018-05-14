@@ -2,7 +2,7 @@
 
 Dmails are e621's semi-custom private messaging relay system. It works kind of like a site-specific emailing system rather than something like an IM client.
 
-**Note**: For **ANY** dmail API actions you must be logged in to e621 and provide your API credentials even when using the GET type endpoints
+**Note**: For any dmail API actions you must be logged in to e621 and provide your API credentials even when using the GET endpoints.
 
 
 ## GET Endpoints
@@ -10,7 +10,7 @@ Dmails are e621's semi-custom private messaging relay system. It works kind of l
 
 ### List
 
-List a set of your dmails based on given parameters. If none are given you will get your most recent sent and received dmails excluding `hidden` dmails
+List a set of your dmails based on given parameters. If no parameters are given you will get your most recent sent and received dmails excluding `hidden` dmails
 
 Base URL is `https://e621.net/dmail/inbox.json`
 
@@ -25,13 +25,12 @@ Base URL is `https://e621.net/dmail/inbox.json`
 - **visibility** - Set the visibility of dmails to be retrieved. Can be `hidden` to retrieve hidden dmails, `unhidden` to get all visible dmails or `all` to retriece all dmails. Default is `unhidden`
 - **page** - The page number to return
 
-
 #### Typical Response Example
 
 ```typescript
 [
     {
-            id: number,
+        id: number,
         parent_id: number,
         title: string,
         body: string,
@@ -61,7 +60,6 @@ Base URL is `https://e621.net/dmail/show.json`
 
 - **id** - ID of the dmail to retrive
 
-
 #### Typical Response Example
 
 ```typescript
@@ -88,7 +86,7 @@ Base URL is `https://e621.net/dmail/show.json`
 
 ### Create
 
-Create a new dmail and send it immediatelys
+Create a new dmail and send it immediately
 
 Base URL is `https://e621.net/dmail/create.json`
 
@@ -100,7 +98,6 @@ Base URL is `https://e621.net/dmail/create.json`
 - **dmail[to_name]** - User's name that the dmail will be sent to
 - **dmail[title]** - Title of the dmail to create
 - **dmail[body]** - Body of the dmail to create (this will not automatically chain together reply bodies if the dmail is responding to another)
-
 
 #### Example POST Object
 

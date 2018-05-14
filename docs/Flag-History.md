@@ -9,6 +9,8 @@ The flag history 'action' is for getting the flag history of posts. There is onl
 
 List a set of changes to the flags on a given post by `post_id`, `user_id` or `username`
 
+This is typically used with `post_id` to see if a post has been flagged for any reason now or in the past
+
 Base URL is `https://e621.net/post_flag_history/index.json`
 
 #### Parameters

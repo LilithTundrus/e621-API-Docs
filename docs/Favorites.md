@@ -20,7 +20,7 @@ Base URL is `https://e621.net/favorite/list_users.json`
 
 ```typescript
 {   
-    // CSV string of users who have favorited the given posts'd IDs
+    // CSV string of users who have favorited the given post ID
     favorited_users: string
 }
 ```

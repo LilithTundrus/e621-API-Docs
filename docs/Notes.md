@@ -1,6 +1,6 @@
 # Notes
 
-Notes are related to posts. They are overlayed sets of text relating to something about the post. An index of posts with notes can be found [here](https://e621.net/note/index)
+Notes are related to posts. They are overlayed sets of text relating to something about the post. An index of posts with notes can be found [here](https://e621.net/note/index).
 
 
 ## GET Endpoints
@@ -13,6 +13,7 @@ Get the note history of a post using `id`, `post_id` or `user_id`. Giving no ext
 Base URL is `https://e621.net/note/history.json`
 
 #### Parameters
+
 - **limit** - Limit on the number of versions to retrieve
 - **page** - The page number to return
 - **post_id** - The post ID to retrieve note versions for
@@ -126,9 +127,9 @@ Base URL is `https://e621.net/note/search.json`
 
 ### Create/Update
 
-For notes, create/update are on the same endpoint. If you supply an id parameter, then e621 will assume you're updating an existing note. Otherwise, it will create a new note
+For notes, create/update are on the same endpoint. If you supply an `id` parameter, then e621 will assume you're updating an existing note. Otherwise, it will create a new note
 
-Base URL is `https://e621.net/note/create.jsons`
+Base URL is `https://e621.net/note/create.json`
 
 #### POST Parameters
 

@@ -42,13 +42,13 @@ Base URL is `https://e621.net/forum/index.json`
 
 ### Search
 
-Search forum posts by a given `query`
+Search forum posts for matches to a given `query`
 
 Base URL is `https://e621.net/forum/search.json`
 
 #### Parameters
 
-- **query** - String query to match forum posts against and return. Using the prefix `user:` allows for searching for forum posts created by a given user.
+- **query** - String query to match forum posts against and return. Using the prefix `user:` allows for searching for forum posts created by a given user
 - **page** - The page number to return
 
 
@@ -80,6 +80,8 @@ Get a single forum post by ID
 Base URL is `https://e621.net/forum/show.json`
 
 #### Parameters
+
+`id` parameter is **required**
 
 - **id** - ID of the forum post to retrieve
 
@@ -113,8 +115,6 @@ Create a new forum post parent or child
 Base URL is `https://e621.net/forum/create.json`
 
 #### POST Parameters
-</br>
-
 
 `forum_post[body]`, `forum_post[title]` and `forum_post[category_id]` are **required**
 
@@ -129,8 +129,6 @@ Base URL is `https://e621.net/forum/create.json`
     - 9 e621 Tools and Applications
     - 10 Tag/Wiki Projects and Questions
     - 11 Site Bug Reports & Feature Requests
-
-
 
 #### Example POST Object
 
@@ -228,7 +226,7 @@ Base URL is `https://e621.net/forum/updates.json`
 
 #### POST Parameters
 
-`id` and one other parameter is **required
+`id` and one other parameter is **required**
 
 - **id** - ID of the forum post to update
 - **forum_post[title]** - Updated title of the forum post
