@@ -351,7 +351,7 @@ Base URL is `https://e621.net/post/create.json`
 {
     // file is extracted from the URL
     "post[source]": "some url",
-    "post[taga]": "tag1 tag2 tag3",
+    "post[tags]": "tag1 tag2 tag3",
     "post[rating]": "explicit",
 }
 ```
@@ -421,7 +421,7 @@ Base URL is `https://e621.net/post/flag.json`
 
 `id` and `flag_option` are **required**
 
-- **id** - The ID number of the post to flag for deletion.
+- **id** - ID of the post to flag for deletion
 - **inferior_parent** - ID of the post which is superior to thepost being flagged. For duplicates, this should be the ID of the post which is older. Use only when `flag_option` is set to `inferior`
 - **flag_option** - Indicates the reason the post should be deleted. Valid values are: `uploader` (Uploader requests deletion) `inferior` (Repost/inferior version of existing post) or one of the following
     - 1 Artist is on avoid-posting list
@@ -453,21 +453,66 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Revert Tagss
 
-Endpoint description
+Revert a post's tags to previous version
 
-Base URL is ``
+Base URL is `https://e621.net/post/revert_tags.json`
 
 #### POST Parameters
 
 Required parameters
 
-- **page** - The page number to return
+- **id** - ID of the post to revert the tags of
+- **history_id** - Version number to revert the tags to
 
 
 #### Example POST Object
 
 ```json
+{
+    "id": 11345,
+    "history_id": 1
+}
+```
 
+#### Response
+
+Response object should look similar to the object below. `?` representing a response property that may or may not be returned
+
+```typescript
+    success: boolean,
+    reason?: string,
+    message?: string
+```
+</br>
+
+### Update
+
+Update a post's information
+
+Base URL is `https://e621.net/post/update.json`
+
+#### POST Parameters
+
+`id` is **required**
+
+- **id** - ID of the post to update
+- **post[tags]** - An updated set of space-delimited tags for the post
+- **post[old_tags]** - The old tags from the post
+- **post[rating]** - The updated rating for the post
+- **post[source]** - the updated source set for the post
+- **post[description]** - The description for the post
+- **post[is_rating_locked]** - Set to `true` to prevent others from changing the rating
+- **post[is_note_locked]** - Set to `true` to prevent others from adding notes
+- **post[parent_id]** - The ID of the parent post 
+- **reason** - The reason for the submitted changes. Inline DText allowed
+
+#### Example POST Object
+
+```json
+    "id": 11456,s
+    "post[rating]": "explicit",
+    "post[parent_id]": 11234
+}
 ```
 
 #### Response
@@ -483,21 +528,25 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Vote
 
-Endpoint description
+Vote for a post. You can vote once per post per IP address
 
-Base URL is ``
+Base URL is `https://e621.net/post/vote.json`
 
 #### POST Parameters
 
-Required parameters
+`id` is **required**
 
-- **page** - The page number to return
+- **id** - ID of the post to vote for
+- **score** - Set to `1` to upvote, `-1` to downvote
 
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 11134,
+    "score": 1
+}
 ```
 
 #### Response
