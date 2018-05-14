@@ -293,22 +293,31 @@ Base URL is `https://e621.net/post/show.json`
 
 Get the tags of a post by ID or MD5 hash
 
-Base URL is ``
+Base URL is `https://e621.net/post/tags.json`
 
 #### Parameters
 
-- **page** - The page number to return
-
+- **id** - ID of the post to retrieve the tags of
+- **md5** - MD5 hash of the post to retrieve of
 
 #### Typical Response Example
 
 ```typescript
-
+    id: number,
+    name: string,
+    count: number,
+    // 0 General
+    // 1 Artist
+    // 3 Copyright
+    // 4 Character
+    // 5 Species
+    type: e621TagTypes,
+    type_locked: boolean
 ```
 
-[Example JSON Request + Response]()
+[Example JSON Request + Response](https://e621.net/post/tags.json?id=8595)
 
-[Example XML Request + Response]()
+[Example XML Request + Response](https://e621.net/post/tags.xml?id=8595)
 </br>
 </br>
 
@@ -317,21 +326,34 @@ Base URL is ``
 
 ### Create
 
-Endpoint description
+Create a new post. There are only four mandatory fields: you need to supply the tags, and you need to supply the file, either through a multipart form or through a source URL. A source, even if blank, and a rating are also required
 
-Base URL is ``
+Base URL is `https://e621.net/post/create.json`
 
 #### POST Parameters
 
-Required parameters
+`post[tags]`, `post[file]`, `post[rating]` and `post[source]` are **required**
 
-- **page** - The page number to return
+- **post[tags]** - A space-delimited list of tags for the post
+- **post[file]** - The file data encoded as a multipart form
+- **post[rating]** - The rating for the post. Can be `safe`, `questionable`, or `explicit`
+- **post[upload_url]** - If this is a URL, e621 will download the file
+- **post[source]** - This will be used as the post's 'Source' text. Separate multiple URLs with %0A (url-encoded newline) to define multiple sources. Limit of five URLs
+- **post[description]** - The description for the post
+- **post[is_rating_locked]** - Set to `true` to prevent others from changing the rating
+- **post[is_note_locked]** - Set to `true` to prevent others from adding notes
+- **post[parent_id]** - The ID of the parent post (if any)
 
 
 #### Example POST Object
 
 ```json
-
+{
+    // file is extracted from the URL
+    "post[source]": "some url",
+    "post[taga]": "tag1 tag2 tag3",
+    "post[rating]": "explicit",
+}
 ```
 
 #### Response
@@ -343,25 +365,39 @@ Response object should look similar to the object below. `?` representing a resp
     reason?: string,
     message?: string
 ```
+
+If the post upload succeeded, you'll get an attribute called `location` in the response pointing to the relative URL of your newly uploaded post.
+
+If the call fails, the following response reasons are possible:
+
+**MD5 mismatch** - This means you supplied an MD5 parameter and what e621 got doesn't match. Try uploading the file again.
+**duplicate** - This post already exists in e621 (based on the MD5 hash). An additional attribute called location will be set, pointing to the (relative) URL of the original post.
+**other** - Any other error will have its error message printed.
 </br>
 
 ### Destroy
 
-Endpoint description
+Delete a post by ID. You must either own the post or be a moderator
 
-Base URL is ``
+Base URL is `https://e621.net/post/destroy.json`
+
+**Note**: The mode parameter is only required (to be 1) if you are attempting to permanently destroy the post (which must be called a second time, after the post has been normally deleted). You must be logged in to use this action. You must also be janitor or higher
 
 #### POST Parameters
 
-Required parameters
+`id` and `reason` are **required** 
 
-- **page** - The page number to return
-
+- **id** - ID of the post to delete
+- **reason** - Reason the post is being deleted
+- ** mode** - Set to `1` if you are attempting to permanently destroy this post (will only work if called on an already deleted post)
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 114,
+    "reason": "duplicate"
+}
 ```
 
 #### Response
@@ -377,21 +413,31 @@ Response object should look similar to the object below. `?` representing a resp
 
 ### Flag
 
-Endpoint description
+Flaqg a post for deletion
 
-Base URL is ``
+Base URL is `https://e621.net/post/flag.json`
 
 #### POST Parameters
 
-Required parameters
+`id` and `flag_option` are **required**
 
-- **page** - The page number to return
-
+- **id** - The ID number of the post to flag for deletion.
+- **inferior_parent** - ID of the post which is superior to thepost being flagged. For duplicates, this should be the ID of the post which is older. Use only when `flag_option` is set to `inferior`
+- **flag_option** - Indicates the reason the post should be deleted. Valid values are: `uploader` (Uploader requests deletion) `inferior` (Repost/inferior version of existing post) or one of the following
+    - 1 Artist is on avoid-posting list
+    - 2 Post is paysite material
+    - 3 Uncredited trace
+    - 4 Real-life pornography
+    - 5 File corrupted
+    - 6 Image previously deleted
 
 #### Example POST Object
 
 ```json
-
+{
+    "id": 113,
+    "flag_option": 4
+}
 ```
 
 #### Response
