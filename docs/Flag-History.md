@@ -2,6 +2,7 @@
 
 The flag history 'action' is for getting the flag history of posts. There is only one endpoint available.
 
+
 ## GET Endpoints
 </br>
 

@@ -1,5 +1,7 @@
 # Implications
 
+Implications are related to _tags_. They are entries that can define that a certain tag can be implied to mean another.
+
 **e621 Has Marked this section of the API as incomplete**
 
 
