@@ -10,6 +10,8 @@ This is a repository for a better set of documentation for the site [e621](https
 The official documentation is available [here](https://e621.net/help/show/api), but it does not go very in depth on GET/POST endpoints and how they differ. Also some information is incorrect. This documentation is derived from the official API documentation but presented in a different and more in-depth manor.
 
 Any general information will be available on this page. if you want to get more information on any specific endpoint, look in the `docs/` folder of this repo.
+
+You can also find .PDF versions of these docs [here](/pdf-docs/) if you need them to be portable
 </br>
 </br>
 
