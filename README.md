@@ -12,8 +12,8 @@ The official documentation is available [here](https://e621.net/help/show/api), 
 Any general information will be available on this page. if you want to get more information on any specific endpoint, look in the `docs/` folder of this repo.
 
 You can also find .PDF versions of these docs [here](/pdf-docs/) if you need them to be portable
-
-
+<br/>
+<br/>
 
 
 ## :bulb: The Basics
@@ -28,6 +28,8 @@ A basic example looks like this:
 https://e621.net/post/index.json?limit=10
 ```
 [Try it in your browser](https://e621.net/post/index.json?limit=10)
+<br/>
+<br/>
 
 
 ### :pencil2: Breaking down the URL
@@ -41,6 +43,8 @@ After that, the `.json` part of the URL tells e621 that we want a JSON message r
 Lastly are your `parameters`. These change depending on the 'action' you are performing but the allow you to specify the type of data you are receiving from the API. In this case `limit=10` is our parameter. This limits the response from e621 to 10 posts being returned. 
 
 **Note**: Parameters for GET requests must **always** use a `?` to separate the URL from the parameters. Also, any additional parameters beyond the first must be separated with an `&`.
+<br/>
+<br/>
 
 
 ### :wrench: JSONP Support
@@ -55,6 +59,8 @@ would return a response like:
 ```javascript
 mycallbackfunction([{"user":"A User","response":null,"body":"Blip one","user_id":1,"id":1}])
 ```
+<br/>
+<br/>
 
 
 ### :computer: Using cURL
@@ -66,8 +72,8 @@ curl_setopt($ch, CURLOPT_CAINFO, "/server_dir/apache/cacert.pem");
 ```
 
 Alternatively you can disable SSL alltogether (not advised).
-
-
+<br/>
+<br/>
 
 
 ## :exclamation: User-Agent Requirements
@@ -75,18 +81,18 @@ Alternatively you can disable SSL alltogether (not advised).
 Making any requests to the e621 API **requires** a user-agent string. Making this something helpful like your username + project can help e621 get in touch with you if issues arise. (EX: `my-username/myproject-1.0`).
 
 **NOTE**: Impersonating a browser user-agent will quickly have your IP address blocked from API access by e621.
-
-
+<br/>
+<br/>
 
 
 ## :exclamation: Rate limiting
 
 e621 has a hard limit of 1 request per 500ms (2/sec). Breaking this limit will result in an HTTP 503 response.
+<br/>
+<br/>
 
 
-
-
-## :speech_baloon: Response Types
+## :speech_balloon: Response Types
 
 The type of response you get from e621 depends on the type of endpoint you requested (XML or JSON).
 
@@ -123,7 +129,8 @@ e621 also uses standard HTTP responses as well as some custom responses, listed 
 | 522 Origin Connection Time-out	| CloudFlare's attempt to connect to the e621 servers timed out |
 | 524 Origin Connection Time-out	| A connection was established between CloudFlare and the e621 servers, but it timed out before an HTTP response was received |
 | 525 SSL Handshake Failed	| The SSL handshake between CloudFlare and the e621 servers failed |
-
+<br/>
+<br/>
 
 
 
@@ -156,7 +163,8 @@ https://e621.net/user/login.json?name=USERNAME_HERE&password=PASSWORD_HERE
 ```
 
 If you do not have an API key generated, you will receive a failed login, even if the details are correct. Also, **be aware of the security risks involved in sending your API key through an unencrypted channel**. Typically it's better to generate the API-key on the site and store it in a file somewhere to be used in your project.
-
+<br/>
+<br/>
 
 
 
@@ -274,20 +282,24 @@ Refer to [Flag-History](/docs/Flag-History.md) in the `docs/` folder.
 ### Tickets
 
 Refer to [Tickets](/docs/Tickets.md) in the `docs/` folder.
-
-
+<br/>
+<br/>
 
 
 
 ## :boom: Errors?
 
 If you find any errors in this documentation please let me know! I try my best but I am only human.
+<br/>
+<br/>
 
 
 
 ## :yum: Contributing
 
 If you would like to contribute to this project feel free to make some changes and open a pull request!
+<br/>
+<br/>
 
 
 
@@ -300,7 +312,8 @@ Like what I do?
 
 
 Please consider donating even a little. These projects do take time and effort to maintain and aren't exactly mass-marketable
-
+<br/>
+<br/>
 
 
 
