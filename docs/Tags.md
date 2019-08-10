@@ -8,7 +8,7 @@ Tags are descriptive strings relating to _posts_. They do contain their own set 
 
 ### List
 
-List an index of tahs, filtering by a set of given parameters
+List an index of tags, filtering by a set of given parameters
 
 Base URL is `https://e621.net/tag/index.json`
 
