@@ -106,7 +106,7 @@ Base URL is `https://e621.net/post/index.json`
 - **limit** - Number of posts you want to retrieve per page. There is a hard limit of 320 posts per request. Defaults to the value set in user preferences (if any)
 - **before_id** - Returns the next `limit` posts with IDs lower than the given ID
 - **page** - The page number to return
-- **tags** -  The tag search query, only returns posts that match the given spcae-delimited tags
+- **tags** -  The tag search query, only returns posts that match the given space-delimited tags
 - **typed_tags** - Set to `true` to return typed tag information. The tags value returned is a dictionary with each tag type as a key and then a list of tags of that type
 
 #### Typical Response Example
