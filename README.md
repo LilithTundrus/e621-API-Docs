@@ -1,5 +1,9 @@
 # :memo: e621-API-Docs
 
+**A NOTE**
+
+e621 is currently changing their API standards. I'll be updating this as changes come in. This repo needs some updates for sure.
+
 ## :label: About
 
 _"e621 offers a simple API to make scripting easy. All you need is a way to GET and POST to URLs. The ability to parse JSON or XML responses is nice, but not critical. The simplicity of the API means you can write scripts using JavaScript, Perl, Python, Ruby, even shell languages like bash or tcsh."_
